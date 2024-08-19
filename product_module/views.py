@@ -13,7 +13,6 @@ def product_list(request):
         'products': products,
     })
 
-
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
     return render(request, 'product_module/product_detail.html', {
