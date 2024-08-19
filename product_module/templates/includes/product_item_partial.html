@@ -1,25 +1,27 @@
-<div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="box">
-        <a href="">
-            <div class="img-box">
-                <img src="/static/images/p1.png" alt="">
+<div class="col-sm-4">
+    <div class="product-image-wrapper">
+        <div class="single-products">
+            <div class="productinfo text-center">
+                <img src="/static/images/shop/product.jpg" alt="">
+                <h2>{{ product.price }} تومان</h2>
+                <p>{{ product.title }}</p>
+                <a href="#" class="btn btn-default add-to-cart"><i
+                        class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</a>
             </div>
-            <div class="detail-box">
-                <h6>
-                    بارکدخوان
-                </h6>
-                <h6>
-                    Price
-                    <span>
-                    <h2>{{ product.price }}</h2>
-                  </span>
-                </h6>
+            <div class="product-overlay">
+                <div class="overlay-content">
+                    <h2>{{ product.price }} تومان</h2>
+                    <p>{{ product.title }}</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i
+                            class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</a>
+                </div>
             </div>
-            <div class="new">
-                <span>
-                  جدید
-                </span>
-            </div>
-        </a>
+        </div>
+        <div class="choose">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href=""><i class="fa fa-plus-square"></i>لیست علاقه مندی ها</a></li>
+                <li><a href=""><i class="fa fa-plus-square"></i>مقایسه</a></li>
+            </ul>
+        </div>
     </div>
 </div>
