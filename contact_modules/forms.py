@@ -6,16 +6,22 @@ class ContactUsForm(forms.Form):
         label='نام و نام خانوادگی',
         max_length=50,
         error_messages={
-            'required': 'لطفا نام و نام خانوادگی خود را وارد کنید'
+            'required': 'لطفا نام و نام خانوادگی خود را وارد کنید',
+            'max_length': 'نام و نام خانوادگی نمیتواند بیشتر از 50 کاراکتر باشد'
+        },
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'نام و نام خانوادگی'
         })
+    )
     email = forms.EmailField(
         label='ایمیل',
-        widget=forms.EmailInput
-        )
+        widget=forms.EmailInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'ایمیل'
+        }))
     subject = forms.CharField(
-        label='موضوع'
-        )
+        label='موضوع')
     text = forms.CharField(
         label='متن پیام',
-        widget=forms.Textarea
-        )
+        widget=forms.Textarea)
