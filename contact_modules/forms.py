@@ -48,3 +48,32 @@ class ContactUsModelForm(forms.ModelForm):
         fields = ['full_name', 'email', 'title', 'message']
         # fields = '__all__'
         # exclude = ['response']
+        widgets = {
+            'full_name' : forms.TextInput(attrs={
+                'class' : 'form-control'
+            }),
+            'email': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'title': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'message': forms.Textarea(attrs={
+                'class': 'form-control',
+                'rows': 5,
+                'id': 'message'
+            }),
+        }
+
+        labels = {
+            'full_name': 'نام و نام خانوادگی',
+            'email': 'ایمیل',
+            'title': 'عنوان پیام',
+            'message': 'متن پیام'
+        }
+
+        error_messages = {
+            'full_name': {
+                'required':'نام ونام خانوادگی اجباری می باشد لطفا وارد کنید'
+            }
+        }
