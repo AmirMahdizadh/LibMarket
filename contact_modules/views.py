@@ -1,24 +1,20 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from .forms import ContactUsForm, ContactUsModelForm
-from django.views.generic.edit import FormView
+from .forms import ContactUsModelForm
+from django.views.generic.edit import FormView, CreateView
+
+from .models import ContactUs
 
 
-class ContactUsView(FormView):
+class ContactUsView(CreateView):
+    form_class = ContactUsModelForm
     template_name = 'contact_modules/contact_us_page.html'
-    form_class = ContactUsForm
-    success_url = '/contact_us/'
+    success_url = '/contact-us/'
 
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
 
-    # def post(self, request):
-    #     contact_form = ContactUsModelForm(request.POST)
-    #     if contact_form.is_valid():
-    #         contact_form.save()
-    #         return redirect('home_page')
-    #
-    #     return render(request, 'contact_modules/contact_us_page.html', {
-    #         'contact_form': contact_form
-    #     })
+class CreateProfileView(View):
+    def get(self, request):
+        return render(request, 'contact_modules/create_profile_page.html')
+    def post(self, request):
+        print(request.FILES)
+        return render(request, 'contact_modules/create_profile_page.html')
